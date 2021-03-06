@@ -1,0 +1,32 @@
+import java.rmi.Naming;
+
+import javax.swing.JOptionPane;
+
+public class CalculatorClient {
+	public static void main(String[] args) {
+		try {
+			Calculator c = (Calculator) Naming
+					.lookup("//localhost:8080/CalculatorService");
+			
+			int a = Integer.parseInt(JOptionPane.showInputDialog("Entre com o primeiro valor"));
+			
+			String opcao[] = {"+", "-", "*", "/"};
+			int operacao = JOptionPane.showOptionDialog(null, "Escolha uma das operacoes", "Tipo de operacao", 0,
+					JOptionPane.INFORMATION_MESSAGE, null, opcao, opcao[0]);
+			
+			int b = Integer.parseInt(JOptionPane.showInputDialog("Entre com o segundo valor"));
+
+			if(operacao == 0)
+				System.out.println("Soma: " + c.add(a, b));
+			else if (operacao == 1)
+				System.out.println("Subtracao: " + c.sub(a, b));
+			else if (operacao == 2)
+				System.out.println("Multiplicacao: " + c.mul(a, b));
+			else
+				System.out.println("Divisao: " + c.div(a, b));
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}
