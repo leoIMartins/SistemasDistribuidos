@@ -1,9 +1,0 @@
-import java.rmi.Remote;
-
-public class CalculatorServer implements Remote{
-	public CalculatorServer() {
-		try {
-			Calculator c = new CalculatorImpl();
-		}
-	}
-}
