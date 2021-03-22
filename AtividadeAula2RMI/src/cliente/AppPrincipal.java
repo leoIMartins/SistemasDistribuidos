@@ -52,13 +52,13 @@ public class AppPrincipal {
 					System.out.println("********Pessoa Física********");
 				else
 					System.out.println("********Pessoa Jurídica********");
-				/*System.out.println("ID: " + pessoa.getId());
+				System.out.println("ID: " + pessoa.getId());
 				System.out.println("Nome: " + pessoa.getNome());
 				System.out.println("Telefone: " + pessoa.getTelefone());
 				System.out.println("Endereco: " + pessoa.getEndereco());
 				System.out.println("Cidade: " + pessoa.getCidade());
-				System.out.println("Estado: " + pessoa.getEstado());*/
-				System.out.println(pessoa.getClass().getSuperclass().toString());
+				System.out.println("Estado: " + pessoa.getEstado());
+				System.out.println("Salário: R$" + pessoa.getSalario());
 				System.out.println(pessoa.toString());
 			}
 			
