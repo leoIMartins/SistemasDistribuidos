@@ -15,7 +15,7 @@ public class Teste {
 		
 		System.out.println("Entrando no chat...");
 		
-		nome = JOptionPane.showInputDialog("Bem vindo ao Chat. Qual é o seu nome? ");
+		nome = JOptionPane.showInputDialog("Bem vindo ao Chat. Qual Ã© o seu nome? ");
 		
 		try {
 			
