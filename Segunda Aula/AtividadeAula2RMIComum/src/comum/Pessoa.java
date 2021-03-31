@@ -15,7 +15,6 @@ public abstract class Pessoa implements Serializable {
 	private String estado;
 	private double salario;
 
-	
 	public int getId() {
 		return id;
 	}
