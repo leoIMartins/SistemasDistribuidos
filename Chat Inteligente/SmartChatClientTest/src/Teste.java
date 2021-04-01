@@ -14,6 +14,7 @@ public class Teste {
 		String nome = "";
 		String msgp = "";
 		String resp = "";
+		String respBot = "";
 
 		Produto produto = new Produto();
 		produto.setId(1);
@@ -50,34 +51,39 @@ public class Teste {
 				objChat.sendMessage(msg);
 				System.out.print(returnMessage(objChat.retrieveMessage()));
 				new CadastroDB().inserirMensagem(msg);
-				
+
 				if (msgp.equals("0")) {
 					System.out.println(("Exiting chat..."));
 					break;
 				} else if (msgp.toUpperCase().contains("NUMERO") || msgp.toUpperCase().contains("NÚMERO")) {
-					resp = JOptionPane
-							.showInputDialog(nome + ", você quer saber o número do seu pedido?" + "\nDigite SIM ou NAO");
+					resp = JOptionPane.showInputDialog(
+							nome + ", você quer saber o número do seu pedido?" + "\nDigite SIM ou NAO");
 					if (resp.toUpperCase().contains("SIM"))
-						System.out.println("Número do pedido: " + pedido.getNumPedido());
+						respBot = "Número do pedido: " + Integer.toString(pedido.getNumPedido());
 					else
-						JOptionPane.showMessageDialog(null, "Me desculpe, não entendi.");
+						respBot = "Me desculpe, não entendi.";
 				} else if (msgp.toUpperCase().contains("NOTA") || msgp.toUpperCase().contains("FISCAL")
 						|| msgp.toUpperCase().contains("NF")) {
-					resp = JOptionPane
-							.showInputDialog(nome + ", você quer saber o número da nota fiscal?" + "\nDigite SIM ou NAO");
+					resp = JOptionPane.showInputDialog(
+							nome + ", você quer saber o número da nota fiscal?" + "\nDigite SIM ou NAO");
 					if (resp.toUpperCase().contains("SIM"))
-						System.out.println("Número da nota fiscal: 212654645645321");
+						respBot = "Número da nota fiscal: 212654645645324253456541";
 					else
-						JOptionPane.showMessageDialog(null, "Me desculpe, não entendi.");
+						respBot = "Me desculpe, não entendi.";
 				} else if (msgp.toUpperCase().contains("STATUS")) {
 					resp = JOptionPane
 							.showInputDialog(nome + ", você quer saber o status do pedido?" + "\nDigite SIM ou NAO");
 					if (resp.toUpperCase().contains("SIM"))
-						System.out.println("Status do pedido: " + pedido.getStatus());
+						respBot = "Status do pedido: " + pedido.getStatus();
 					else
-						JOptionPane.showMessageDialog(null, "Me desculpe, não entendi.");
+						respBot = "Me desculpe, não entendi.";
 				} else
-					JOptionPane.showMessageDialog(null, "Me desculpe, não entendi.");
+					respBot = "Me desculpe, não entendi.";
+
+				Message msgBot = new Message("BOT", respBot);
+				objChat.sendMessage(msgBot);
+				System.out.print(returnMessage(objChat.retrieveMessage()));
+				new CadastroDB().inserirMensagem(msgBot);
 			}
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -88,7 +94,6 @@ public class Teste {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	private static String returnMessage(List<Message> lst) {
