@@ -42,6 +42,7 @@ public class Teste {
 		try {
 
 			while (msgp != "0") {
+				msgp = "";
 				msgp = JOptionPane.showInputDialog(nome + ", como podemos te ajudar?"
 						+ "\nVocê pode perguntar o número do seu pedido, o número da nota fiscal, o status do pedido etc"
 						+ "\nCaso queira sair do chat, digite 0");
