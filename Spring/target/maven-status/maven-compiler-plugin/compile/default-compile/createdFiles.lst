@@ -1,7 +1,0 @@
-br\com\constant\Constant.class
-br\com\MyApplication.class
-br\com\model\Client.class
-br\com\service\ClientService.class
-br\com\config\SwaggerConfig.class
-br\com\controller\ClientController.class
-br\com\repository\ClientRepository.class
