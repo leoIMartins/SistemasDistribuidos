@@ -34,6 +34,8 @@ public class MusicaController {
 
     @PutMapping(Constant.API_MUSICA)
     public void update (@RequestBody Musica musica){
+        Optional<Album> album = albumService.findById(musica.getAlbum().getId());
+        musica.setAlbum(album.get());
         musicaService.save(musica);
     }
 
