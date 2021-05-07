@@ -34,4 +34,5 @@ public class Artista {
     public void setIntegrantes(String integrantes) {
         this.integrantes = integrantes;
     }
+
 }

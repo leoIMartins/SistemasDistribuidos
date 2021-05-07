@@ -39,4 +39,5 @@ public class ArtistaController {
     public Optional<Artista> findById(@PathVariable("id") String id){
         return artistaService.findById(id);
     }
+
 }

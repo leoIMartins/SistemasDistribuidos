@@ -29,4 +29,5 @@ public class ArtistaService {
     public void delete(String id){
         artistaRepository.deleteById(id);
     }
+
 }

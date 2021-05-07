@@ -18,13 +18,13 @@ public class AlbumController {
     private AlbumService albumService;
 
     @Autowired
-    private ArtistaService artistaService;
+    private ArtistaService artistaService;  // Instancia a classe ArtistaService
 
     @PostMapping(Constant.API_ALBUM)
     public void save(@RequestBody Album album){
-        Optional<Artista> artista = artistaService.findById(album.getArtista().getId());
-        album.setArtista(artista.get());
-        albumService.save(album);
+        Optional<Artista> artista = artistaService.findById(album.getArtista().getId());    // Objeto artista recebe o ID do artista vindo do JSON do swagger
+        album.setArtista(artista.get());                                                    // Atributo artista do Objeto album recebe o objeto artista
+        albumService.save(album);                                                           // É feito o INSERT do album com o objeto artista
     }
 
     @GetMapping(Constant.API_ALBUM)
@@ -48,4 +48,5 @@ public class AlbumController {
     public Optional<Album> findById(@PathVariable("id") String id){
         return albumService.findById(id);
     }
+
 }

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ArtistaRepository extends MongoRepository<Artista, String> {
+
 }

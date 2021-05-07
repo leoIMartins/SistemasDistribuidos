@@ -52,4 +52,5 @@ public class Musica {
     public void setAlbum(Album album) {
         this.album = album;
     }
+
 }

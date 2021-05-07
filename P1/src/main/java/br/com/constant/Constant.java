@@ -5,4 +5,5 @@ public class Constant {
     public static final String API_ARTISTA =  API_URL + "artista";
     public static final String API_ALBUM =  API_URL + "album";
     public static final String API_MUSICA =  API_URL + "musica";
+
 }
